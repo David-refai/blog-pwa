@@ -1,4 +1,13 @@
+/**
+ * Toast notification system for displaying temporary messages
+ * Creates a floating notification that auto-dismisses after 3 seconds
+ */
 export const toast = {
+  /**
+   * Displays a toast notification message
+   * @param {string} msg - The message to display
+   * @param {string} type - Type of notification: 'success' (green) or 'error' (red)
+   */
   show: (msg, type = 'error') => {
     const el = document.createElement('div');
     const color = type === 'success' ? '#10b981' : '#ef4444';
@@ -10,6 +19,7 @@ export const toast = {
     `;
     el.textContent = msg;
     document.body.appendChild(el);
+    // Auto-remove after 3 seconds with fade-out animation
     setTimeout(() => {
       el.style.opacity = '0';
       el.style.transform = 'translateY(-20px)';

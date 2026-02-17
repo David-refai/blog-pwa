@@ -1,9 +1,15 @@
+/**
+ * Test Suite: Error Handling
+ * Tests that all pages correctly handle and display errors when API calls fail
+ * Verifies proper error UI and user feedback for different error scenarios
+ */
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { api } from '../services/api.js';
 import { BlogPage } from '../pages/BlogPage.js';
 import { PostDetailsPage } from '../pages/PostDetailsPage.js';
 import { CreatePostPage } from '../pages/CreatePostPage.js';
 
+// Mock API to simulate failures
 vi.mock('../services/api.js', () => ({
     api: {
         get: vi.fn(),
@@ -11,6 +17,7 @@ vi.mock('../services/api.js', () => ({
     }
 }));
 
+// Mock authenticated user for form submission tests
 vi.mock('../services/auth.js', () => ({
     authState: {
         user: { id: 1, firstName: 'David', lastName: 'Refai' }
@@ -23,6 +30,12 @@ describe('Global Error Handling', () => {
         vi.clearAllMocks();
     });
 
+    /**
+     * Test: BlogPage displays error UI when API fails
+     * Simulates a network failure and verifies that:
+     * - An error message is displayed instead of the blog list
+     * - The specific error message is shown to the user
+     */
     it('BlogPage should render error UI when API fails', async () => {
         api.get.mockRejectedValueOnce(new Error('Network failure'));
 
@@ -33,6 +46,12 @@ describe('Global Error Handling', () => {
         expect(document.body.innerHTML).toContain('Network failure');
     });
 
+    /**
+     * Test: PostDetailsPage shows specific 404 error message
+     * Simulates a 404 response and verifies that:
+     * - A user-friendly "Article Not Found" message is shown
+     * - The error is distinguished from generic network errors
+     */
     it('PostDetailsPage should render specific error for 404', async () => {
         const error = new Error('Not Found');
         error.response = { status: 404 };
@@ -44,13 +63,20 @@ describe('Global Error Handling', () => {
         expect(document.querySelector('h1').textContent).toBe('Article Not Found');
     });
 
+    /**
+     * Test: CreatePostPage shows inline error message on submission failure
+     * Simulates a server error during post creation and verifies that:
+     * - The error is shown inline in the form (not page-wide)
+     * - The specific error message is displayed to help the user retry
+     * - The form remains accessible for corrections
+     */
     it('CreatePostPage should show error message in form on submission failure', async () => {
         api.post.mockRejectedValueOnce(new Error('Server Error 500'));
 
         const html = await CreatePostPage();
         document.getElementById('app').innerHTML = html;
 
-        // Wait for setTimeout in CreatePostPage to run
+        // Wait for setTimeout in CreatePostPage to run (event handler attachment)
         await new Promise(r => setTimeout(r, 0));
 
         const form = document.getElementById('create-post-form');
