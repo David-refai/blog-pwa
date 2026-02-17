@@ -1,9 +1,8 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { api } from '../services/api.js';
 import { mockData } from '../services/mocks.js';
-
-// No direct vi.mock for api.js here because we want to test its actual implementation
-// However, we need to mock axios which api.js uses
+import axios from 'axios';
+import { toast } from '../utils/toast.js';
 
 vi.mock('axios', () => ({
     default: {
@@ -14,10 +13,15 @@ vi.mock('axios', () => ({
     }
 }));
 
+vi.mock('../utils/toast.js', () => ({
+    toast: {
+        show: vi.fn()
+    }
+}));
+
 describe('apiService - Environment Logic', () => {
     beforeEach(() => {
         vi.clearAllMocks();
-        // Simulate production environment (non-localhost)
         Object.defineProperty(window, 'location', {
             value: { hostname: 'your-username.github.io' },
             writable: true
@@ -25,11 +29,6 @@ describe('apiService - Environment Logic', () => {
     });
 
     it('should use mock data in production mode for GET requests', async () => {
-        // Force hostname to be something other than localhost to trigger production mode simulation if needed
-        // In our implementation, isProduction depends on import.meta.env.PROD || hostname !== 'localhost'
-        // Since we are running in vitest, we can check how isProduction is evaluated.
-
-        // For GET /products, it should return mockData.products without calling axios
         const products = await api.get('/products');
         expect(products).toEqual(mockData.products);
     });
@@ -45,5 +44,34 @@ describe('apiService - Environment Logic', () => {
         const data = { title: 'New Post' };
         const result = await api.post('/posts', data);
         expect(result).toEqual(data);
+    });
+});
+
+describe('apiService - Error Handling & Offline Simulation', () => {
+    beforeEach(() => {
+        vi.clearAllMocks();
+        Object.defineProperty(window, 'location', {
+            value: { hostname: 'localhost' },
+            writable: true
+        });
+    });
+
+    it('should handle network errors (offline simulation) via toast', async () => {
+        axios.get.mockRejectedValue(new Error('Network Error'));
+
+        await expect(api.get('/products')).rejects.toThrow('Network Error');
+        expect(toast.show).toHaveBeenCalledWith('Network Error', 'error');
+    });
+
+    it('should handle specific API error messages from server', async () => {
+        const errorResponse = {
+            response: {
+                data: { message: 'Custom Server Error' }
+            }
+        };
+        axios.get.mockRejectedValue(errorResponse);
+
+        await expect(api.get('/invalid')).rejects.toEqual(errorResponse);
+        expect(toast.show).toHaveBeenCalledWith('Custom Server Error', 'error');
     });
 });
