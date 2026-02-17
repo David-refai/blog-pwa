@@ -26,9 +26,11 @@ export class LiteRouter {
     });
 
     // Initial Load Logic
-    window.addEventListener('load', () => {
+    if (document.readyState === 'complete') {
       this.loadRoute();
-    });
+    } else {
+      window.addEventListener('load', () => this.loadRoute());
+    }
   }
 
   navigateTo(url) {
