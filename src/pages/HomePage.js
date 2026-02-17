@@ -5,44 +5,44 @@ export const HomePage = async () => {
     <header style="padding: 8rem 2rem; text-align:center; background: radial-gradient(circle at center, rgba(79,70,229,0.1), transparent 70%);">
        <div class="container">
          <span style="background:rgba(79,70,229,0.1); color:var(--primary); padding:0.4rem 1rem; border-radius:30px; font-weight:600; font-size:0.9rem;">
-           v2.0 Ultimate
+           Blog PWA v2.0
          </span>
-         <h1 style="font-size:4rem; margin:1.5rem 0; line-height:1.1;">
-           Build with <span style="background: linear-gradient(to right, #4f46e5, #ec4899); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Precision</span>.
+         <h1 style="font-size:4rem; margin:1.5rem 0; line-height:1.1; letter-spacing:-0.02em;">
+           Share Your <span style="background: linear-gradient(to right, #4f46e5, #ec4899); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Stories</span> Worldwide.
          </h1>
          <p style="font-size:1.4rem; color:#6b7280; max-width:600px; margin:0 auto 2.5rem;">
-           A fully functional MVC architecture with Authentication, Routing, and Live Database integration.
+           A modern, lightning-fast Progressive Web App designed for writers who care about speed, offline access, and premium aesthetics.
          </p>
          <div style="display:flex; gap:1rem; justify-content:center;">
-           <a href="/blog-pwa/blog" class="btn btn-primary" style="padding:1rem 2rem; font-size:1.1rem;" data-link>Read Blog</a>
-           <a href="/blog-pwa/documentation" class="btn btn-social" style="width:auto; padding:1rem 2rem; font-size:1.1rem;" data-link>Documentation</a>
+           <a href="/blog-pwa/blog" class="btn btn-primary" style="padding:1rem 2rem; font-size:1.1rem; border-radius:1rem;" data-link>Explore Articles</a>
+           <a href="/blog-pwa/login" class="btn btn-social" style="width:auto; padding:1rem 2rem; font-size:1.1rem; border-radius:1rem;" data-link>Start Writing</a>
          </div>
        </div>
     </header>
 
-    <section id="about" style="background:white; padding:6rem 2rem;">
+    <section id="about" style="background:white; padding:8rem 2rem;">
       <div class="container">
-         <div style="text-align:center; margin-bottom:4rem;">
-           <h2 style="font-size:2.5rem; margin-bottom:1rem;">Why Refai.Code?</h2>
-           <p style="color:#6b7280;">Built for modern developers who need speed and structure.</p>
+         <div style="text-align:center; margin-bottom:5rem;">
+           <h2 style="font-size:3rem; font-weight:800; margin-bottom:1.5rem; letter-spacing:-0.03em;">Built for the Modern Web</h2>
+           <p style="color:#6b7280; font-size:1.1rem; max-width:600px; margin:0 auto;">Experience a blog that works everywhere, even without an internet connection.</p>
          </div>
 
-         <div class="grid">
-           <div class="glass-panel" style="text-align:center; border:none; background:#f9fafb;">
-             <div style="font-size:2.5rem; margin-bottom:1rem;">⚡</div>
-             <h3 style="margin-bottom:0.5rem;">Concurrent Run</h3>
-             <p style="color:#6b7280;">Vite & Server run in a single command.</p>
-           </div>
-           <div class="glass-panel" style="text-align:center; border:none; background:#f9fafb;">
-             <div style="font-size:2.5rem; margin-bottom:1rem;">🔐</div>
-             <h3 style="margin-bottom:0.5rem;">Real Auth</h3>
-             <p style="color:#6b7280;">Users saved to JSON DB with persistent login.</p>
-           </div>
-           <div class="glass-panel" style="text-align:center; border:none; background:#f9fafb;">
-             <div style="font-size:2.5rem; margin-bottom:1rem;">💅</div>
-             <h3 style="margin-bottom:0.5rem;">Glass UI</h3>
-             <p style="color:#6b7280;">Modern aesthetics with blurred backgrounds.</p>
-           </div>
+         <div class="grid" style="gap:2rem;">
+            <div class="glass-panel" style="text-align:center; border:none; background:#f9fafb; padding:3rem; border-radius:2rem;">
+              <div style="font-size:3rem; margin-bottom:1.5rem;">📡</div>
+              <h3 style="margin-bottom:1rem; font-size:1.5rem; font-weight:700;">Offline Ready</h3>
+              <p style="color:#6b7280; line-height:1.6;">Full PWA support with service workers. Read your favorite articles anywhere, anytime.</p>
+            </div>
+            <div class="glass-panel" style="text-align:center; border:none; background:#f9fafb; padding:3rem; border-radius:2rem;">
+              <div style="font-size:3rem; margin-bottom:1.5rem;">✍️</div>
+              <h3 style="margin-bottom:1rem; font-size:1.5rem; font-weight:700;">Create & Edit</h3>
+              <p style="color:#6b7280; line-height:1.6;">Intuitive publishing tools for authors. Manage your content with a sleek, responsive editor.</p>
+            </div>
+            <div class="glass-panel" style="text-align:center; border:none; background:#f9fafb; padding:3rem; border-radius:2rem;">
+              <div style="font-size:3rem; margin-bottom:1.5rem;">🚀</div>
+              <h3 style="margin-bottom:1rem; font-size:1.5rem; font-weight:700;">Blazing Fast</h3>
+              <p style="color:#6b7280; line-height:1.6;">Built on a lightweight MVC architecture ensuring sub-second load times and smooth transitions.</p>
+            </div>
          </div>
       </div>
     </section>
