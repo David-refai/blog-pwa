@@ -11,9 +11,9 @@ export class LiteRouter {
         e.preventDefault();
         const id = anchor.getAttribute('href');
         if (window.location.pathname !== '/') {
-           this.navigateTo('/' + id);
+          this.navigateTo('/' + id);
         } else {
-           this.scrollToId(id);
+          this.scrollToId(id);
         }
         return;
       }
@@ -38,6 +38,13 @@ export class LiteRouter {
 
   async loadRoute() {
     let path = window.location.pathname;
+    const base = '/blog-pwa';
+
+    // Strip base path for matching
+    if (path.startsWith(base)) {
+      path = path.slice(base.length) || '/';
+    }
+    if (path === '') path = '/';
 
     // Check hash intent from other pages
     let hashTarget = '';
