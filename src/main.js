@@ -14,13 +14,13 @@ import { SignupPage } from './pages/SignupPage.js';
 import { DocsPage } from './pages/DocsPage.js';
 
 const routes = [
-  { path: '/blog-pwa/', component: HomePage, layout: Layout, title: 'Home | Refai.Code' },
-  { path: '/blog-pwa/products', component: ProductsPage, layout: Layout, title: 'Products' },
-  { path: '/blog-pwa/products/:id', component: ProductDetailsPage, layout: Layout, title: 'Details' },
-  { path: '/blog-pwa/documentation', component: DocsPage, layout: Layout, title: 'Documentation' },
-  { path: '/blog-pwa/login', component: LoginPage, layout: Layout, title: 'Login' },
-  { path: '/blog-pwa/logout', component: () => { authState.logout(); return '<div></div>'; } },
-  { path: '/blog-pwa/signup', component: SignupPage, layout: Layout, title: 'Signup' },
+  { path: '/', component: HomePage, layout: Layout, title: 'Home | Refai.Code' },
+  { path: '/products', component: ProductsPage, layout: Layout, title: 'Products' },
+  { path: '/products/:id', component: ProductDetailsPage, layout: Layout, title: 'Details' },
+  { path: '/documentation', component: DocsPage, layout: Layout, title: 'Documentation' },
+  { path: '/login', component: LoginPage, layout: Layout, title: 'Login' },
+  { path: '/logout', component: () => { authState.logout(); return '<div></div>'; } },
+  { path: '/signup', component: SignupPage, layout: Layout, title: 'Signup' },
   { path: '*', component: () => '<h1 class="container">404</h1>', layout: Layout }
 ];
 

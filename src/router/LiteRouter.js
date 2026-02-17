@@ -44,9 +44,9 @@ export class LiteRouter {
 
     // Strip base path for matching
     if (path.startsWith(base)) {
-      path = path.slice(base.length) || '/';
+      path = path.replace(base, '') || '/';
     }
-    if (path === '') path = '/';
+    if (!path.startsWith('/')) path = '/' + path;
 
     // Check hash intent from other pages
     let hashTarget = '';
