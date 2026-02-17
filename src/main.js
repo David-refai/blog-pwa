@@ -7,16 +7,20 @@ import { Navbar } from './components/Navbar.js';
 import { authState } from './services/auth.js';
 
 import { HomePage } from './pages/HomePage.js';
-import { ProductsPage } from './pages/ProductsPage.js';
-import { ProductDetailsPage } from './pages/ProductDetailsPage.js';
+import { BlogPage } from './pages/BlogPage.js';
+import { PostDetailsPage } from './pages/PostDetailsPage.js';
+import { CreatePostPage } from './pages/CreatePostPage.js';
+import { EditPostPage } from './pages/EditPostPage.js';
 import { LoginPage } from './pages/LoginPage.js';
 import { SignupPage } from './pages/SignupPage.js';
 import { DocsPage } from './pages/DocsPage.js';
 
 const routes = [
   { path: '/', component: HomePage, layout: Layout, title: 'Home | Refai.Code' },
-  { path: '/products', component: ProductsPage, layout: Layout, title: 'Products' },
-  { path: '/products/:id', component: ProductDetailsPage, layout: Layout, title: 'Details' },
+  { path: '/blog', component: BlogPage, layout: Layout, title: 'Blog' },
+  { path: '/blog/create', component: CreatePostPage, layout: Layout, title: 'Create Post' },
+  { path: '/posts/:id', component: PostDetailsPage, layout: Layout, title: 'Article' },
+  { path: '/posts/edit/:id', component: EditPostPage, layout: Layout, title: 'Edit Post' },
   { path: '/documentation', component: DocsPage, layout: Layout, title: 'Documentation' },
   { path: '/about', component: HomePage, layout: Layout, title: 'About | Refai.Code' },
   { path: '/login', component: LoginPage, layout: Layout, title: 'Login' },

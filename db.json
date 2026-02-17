@@ -9,22 +9,42 @@
       "avatar": "https://ui-avatars.com/api/?name=Refai+Code&background=4f46e5&color=fff"
     }
   ],
-  "products": [
+  "posts": [
     {
       "id": "1",
-      "name": "Sony WH-1000XM5",
-      "price": 348,
-      "rating": 4.8,
-      "image": "https://images.unsplash.com/photo-1618366712010-f4ae9c647dcb?auto=format&fit=crop&w=600&q=80",
-      "description": "Industry-leading noise canceling with two processors controlling 8 microphones for unprecedented noise cancellation."
+      "title": "Welcome to Refai.Code Blog",
+      "excerpt": "Discover the latest in web development, AI, and PWA technologies. Join our journey into the future of coding.",
+      "content": "Welcome to our new platform! We are excited to share our passion for high-performance web applications and cutting-edge software engineering. In this blog, we will cover everything from React and Vite to PWA optimizations and automated testing.\n\nStay tuned for deep dives into modern architectures and practical coding tips that will elevate your development workflow.",
+      "author": "David Refai",
+      "date": "2026-02-17",
+      "image": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=80"
     },
     {
       "id": "2",
-      "name": "Apple MacBook Air M2",
-      "price": 1099,
-      "rating": 4.9,
-      "image": "https://images.unsplash.com/photo-1517336714731-489689fd1ca4?auto=format&fit=crop&w=600&q=80",
-      "description": "Redesigned around the next-generation M2 chip. Strikingly thin and brings exceptional speed and power efficiency."
+      "title": "Building Offline-First Applications",
+      "excerpt": "Learn how to use Service Workers and Workbox to create resilient web applications that work without an internet connection.",
+      "content": "Offline functionality is a core pillar of Progressive Web Apps. Service Workers act as a proxy between your web app and the network, allowing you to intercept requests and serve cached content.\n\nIn this article, we explore strategies like Cache-First, Stale-While-Revalidate, and how to handle background sync for a truly resilient user experience.",
+      "author": "David Refai",
+      "date": "2026-02-16",
+      "image": "https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&w=1200&q=80"
+    },
+    {
+      "id": "3",
+      "title": "Mastering CSS Grid and Flexbox",
+      "excerpt": "A comprehensive guide to creating responsive, modern layouts using the most powerful CSS tools available today.",
+      "content": "Layout design has evolved tremendously. CSS Grid provides a two-dimensional layout system that handles rows and columns with ease, while Flexbox excels at one-dimensional space distribution.\n\nCombining both allows for complex, responsive designs that look beautiful on any device size. We'll show you the secret patterns for perfect alignment.",
+      "author": "David Refai",
+      "date": "2026-02-15",
+      "image": "https://images.unsplash.com/photo-1507721999472-8ed4421c4af2?auto=format&fit=crop&w=1200&q=80"
+    },
+    {
+      "id": "80fa",
+      "title": "UnitTest",
+      "excerpt": "A unit test verifies the accuracy of the smallest, isolated parts of an application—typically functions or methods—to ensure they behave as expected.",
+      "content": "Key Aspects of Unit Testing\nIsolation: Units are tested in isolation, often using stubs or mocks to replace dependencies like databases or APIs.\nAutomation & Speed: Unit tests are typically automated and run frequently during development to provide instant feedback.\nStructure: Follows the \"Arrange, Act, Assert\" (AAA) pattern: setting up the data, running the function, and verifying the result.\nFocus: Tests both valid, invalid, and edge cases to ensure robust behavior. \nBenefits\nEarly Bug Detection: Finds errors in the development phase, reducing long-term debugging costs.\nEasier Refactoring: Acts as a safety net, allowing code changes without breaking existing functionality.\nDocumentation: Serves as living documentation for how the code is supposed to work. \nTools and Frameworks\nPython: unittest, pytest.\nJavaScript: Jest, Vitest, Mocha.\nJava/C#: JUnit, NUnit. \nEffective unit tests are typically fast, reliable, and cover various execution paths to ensure code quality. ",
+      "image": "https://cms-cdn.katalon.com/1_8ae5b9bc52.png",
+      "author": "Super Admin",
+      "date": "2026-02-17"
     }
   ]
 }

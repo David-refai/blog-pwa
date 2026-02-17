@@ -29,8 +29,8 @@ describe('apiService - Environment Logic', () => {
     });
 
     it('should use mock data in production mode for GET requests', async () => {
-        const products = await api.get('/products');
-        expect(products).toEqual(mockData.products);
+        const posts = await api.get('/posts');
+        expect(posts).toEqual(mockData.posts);
     });
 
     it('should return mock user by email in production mode', async () => {
@@ -59,7 +59,7 @@ describe('apiService - Error Handling & Offline Simulation', () => {
     it('should handle network errors (offline simulation) via toast', async () => {
         axios.get.mockRejectedValue(new Error('Network Error'));
 
-        await expect(api.get('/products')).rejects.toThrow('Network Error');
+        await expect(api.get('/posts')).rejects.toThrow('Network Error');
         expect(toast.show).toHaveBeenCalledWith('Network Error', 'error');
     });
 

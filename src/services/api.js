@@ -29,7 +29,7 @@ export const api = {
         if (email) return mockData.users.filter(u => u.email === email);
         return mockData.users;
       }
-      if (url.startsWith('/products')) return mockData.products;
+      if (url.startsWith('/posts')) return mockData.posts;
     }
     return handle(axios.get(`${getApiUrl()}${url}`));
   },
