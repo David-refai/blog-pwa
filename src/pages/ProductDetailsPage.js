@@ -5,7 +5,7 @@ export const ProductDetailsPage = async ({ params }) => {
   try {
     const p = await api.get(`/products/${params.id}`);
     return `<div class="container" style="padding-top:4rem;">
-        <a href="/products" data-link style="display:inline-flex; align-items:center; color:#6b7280; text-decoration:none; margin-bottom:2rem; font-weight:500;">
+        <a href="/blog-pwa/products" data-link style="display:inline-flex; align-items:center; color:#6b7280; text-decoration:none; margin-bottom:2rem; font-weight:500;">
           <svg style="width:20px; margin-right:5px;" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
           Back to Products
         </a>

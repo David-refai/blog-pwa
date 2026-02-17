@@ -26,7 +26,7 @@ export const ProductsPage = async () => {
                <p style="font-size:0.9rem; color:#6b7280; flex:1; overflow:hidden; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; margin-bottom:1.5rem;">
                  ${p.description}
                </p>
-               <a href="/products/${p.id}" class="btn btn-primary" style="width:100%; justify-content:center;" data-link>View Details</a>
+               <a href="/blog-pwa/products/${p.id}" class="btn btn-primary" style="width:100%; justify-content:center;" data-link>View Details</a>
              </div>
            </div>
          `).join('')}

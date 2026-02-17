@@ -8,7 +8,7 @@ export const Navbar = () => {
   setTimeout(() => {
     const btn = document.getElementById('hamburger-btn');
     const menu = document.getElementById('nav-menu');
-    if(btn && menu) {
+    if (btn && menu) {
       btn.onclick = () => menu.classList.toggle('active');
       // Close menu when clicking any link
       menu.querySelectorAll('a, button').forEach(el => {
@@ -19,16 +19,16 @@ export const Navbar = () => {
 
   return `<nav class="navbar">
       <div class="nav-inner">
-        <a href="/" class="logo" style="font-weight:800; font-size:1.4rem; text-decoration:none; color:var(--text)" data-link>
+        <a href="/blog-pwa/" class="logo" style="font-weight:800; font-size:1.4rem; text-decoration:none; color:var(--text)" data-link>
           Refai<span style="color:var(--primary)">.Code</span>
         </a>
 
         <button class="hamburger" id="hamburger-btn">☰</button>
 
         <div class="nav-links" id="nav-menu">
-          <a href="/" data-link>Home</a>
+          <a href="/blog-pwa/" data-link>Home</a>
           <a href="#about">About</a>
-          <a href="/products" data-link>Products</a>
+          <a href="/blog-pwa/products" data-link>Products</a>
 
           <div style="margin-left: 2rem; padding-left: 2rem; border-left: 1px solid #ddd;">
             ${user ? `

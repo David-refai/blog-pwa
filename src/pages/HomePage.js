@@ -14,7 +14,7 @@ export const HomePage = async () => {
            A fully functional MVC architecture with Authentication, Routing, and Live Database integration.
          </p>
          <div style="display:flex; gap:1rem; justify-content:center;">
-           <a href="/products" class="btn btn-primary" style="padding:1rem 2rem; font-size:1.1rem;" data-link>Fetch Data</a>
+           <a href="/blog-pwa/products" class="btn btn-primary" style="padding:1rem 2rem; font-size:1.1rem;" data-link>Fetch Data</a>
            <a href="https://github.com/refai" target="_blank" class="btn btn-social" style="width:auto; padding:1rem 2rem; font-size:1.1rem;">Documentation</a>
          </div>
        </div>
