@@ -3,6 +3,7 @@ import path from 'path';
 import { VitePWA } from 'vite-plugin-pwa';
 
 export default defineConfig({
+  base: '/blog-pwa/',
   resolve: { alias: { '@': path.resolve(__dirname, './src') } },
   plugins: [
     VitePWA({
@@ -24,8 +25,8 @@ export default defineConfig({
         name: 'Refai App',
         short_name: 'Refai',
         description: 'Vite PWA powered by Refai.Code',
-        start_url: '/',
-        scope: '/',
+        start_url: '/blog-pwa/',
+        scope: '/blog-pwa/',
         display: 'standalone',
         background_color: '#ffffff',
         theme_color: '#4f46e5',
