@@ -15,7 +15,7 @@ export const HomePage = async () => {
          </p>
          <div style="display:flex; gap:1rem; justify-content:center;">
            <a href="/blog-pwa/products" class="btn btn-primary" style="padding:1rem 2rem; font-size:1.1rem;" data-link>Fetch Data</a>
-           <a href="https://github.com/refai" target="_blank" class="btn btn-social" style="width:auto; padding:1rem 2rem; font-size:1.1rem;">Documentation</a>
+           <a href="/blog-pwa/documentation" class="btn btn-social" style="width:auto; padding:1rem 2rem; font-size:1.1rem;" data-link>Documentation</a>
          </div>
        </div>
     </header>
