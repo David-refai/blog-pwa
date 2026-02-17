@@ -17,7 +17,7 @@ export const PostDetailsPage = async ({ params }) => {
     return `<div class="container" style="padding-top:6rem; text-align:center;">
       <div style="background:#f9fafb; border:1px solid #e5e7eb; padding:3rem; border-radius:1.5rem; max-width:600px; margin:0 auto;">
         <h1 style="margin-bottom:1rem; font-weight:800;">${error === 'Article Not Found' ? 'Article Not Found' : 'Something went wrong'}</h1>
-        <p style="margin-bottom:2rem; color:#6b7280;">${error === 'Article Not Found' ? 'The article you are looking for does not exist or has been moved.' : error}</p>
+        <p style="margin-bottom:2rem; color:#4b5563;">${error === 'Article Not Found' ? 'The article you are looking for does not exist or has been moved.' : error}</p>
         <a href="/blog-pwa/blog" class="btn btn-primary" data-link>Back to Blog</a>
       </div>
     </div>`;
@@ -39,7 +39,7 @@ export const PostDetailsPage = async ({ params }) => {
             <img src="https://ui-avatars.com/api/?name=${post.author.replace(' ', '+')}&background=4f46e5&color=fff&bold=true" style="width:56px; height:56px; border-radius:50%; box-shadow:0 4px 6px -1px rgba(0,0,0,0.1);" alt="${post.author}">
             <div>
               <div style="font-weight:700; color:#111827; font-size:1.1rem;">${post.author}</div>
-              <div style="font-size:0.9rem; color:#6b7280; display:flex; gap:0.5rem; align-items:center;">
+              <div style="font-size:0.9rem; color:#4b5563; display:flex; gap:0.5rem; align-items:center;">
                 <span>${new Date(post.date).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}</span>
                 <span>•</span>
                 <span style="display:flex; align-items:center; gap:0.25rem;">
@@ -66,7 +66,7 @@ export const PostDetailsPage = async ({ params }) => {
 
       <footer style="margin-top:6rem; padding-top:4rem; border-top:1px solid #f3f4f6;">
         <div style="background:#f9fafb; border-radius:1.5rem; padding:2rem; display:flex; align-items:center; justify-content:space-between;">
-          <div style="font-weight:600; color:#4b5563;">Was this helpful?</div>
+          <div style="font-weight:600; color:#374151;">Was this helpful?</div>
           <div style="display:flex; gap:1rem;">
             <button class="btn btn-social" style="width:auto; padding:0.6rem 1.2rem;">Share</button>
             <button class="btn btn-primary" style="width:auto; padding:0.6rem 1.2rem;">Bookmark</button>

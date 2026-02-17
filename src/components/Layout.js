@@ -1,7 +1,7 @@
 import { Navbar } from './Navbar.js';
 
 export const Layout = () =>
-`
+  `
   <div id="nav-mount">${Navbar()}</div>
   <main>
     <div data-outlet></div>
@@ -14,7 +14,7 @@ export const Layout = () =>
          <a href="#" style="color:#666; text-decoration:none;">Twitter</a>
          <a href="#" style="color:#666; text-decoration:none;">GitHub</a>
        </div>
-       <p style="color:#999; font-size:0.9rem;">© 2026. All rights reserved.</p>
+       <p style="color:#4b5563; font-size:0.9rem;">© 2026. All rights reserved.</p>
     </div>
   </footer>
 `;

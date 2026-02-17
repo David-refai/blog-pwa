@@ -27,7 +27,7 @@ export const BlogPage = async () => {
        <div style="display:flex; justify-content:space-between; align-items:flex-end; margin-bottom:3rem;">
          <div>
            <h1 style="margin:0; font-size:2.5rem; font-weight:800; background:linear-gradient(to right, var(--primary), #818cf8); -webkit-background-clip:text; -webkit-text-fill-color:transparent;">Refai.Code Blog</h1>
-           <p style="color:#6b7280; margin-top:0.5rem;">Insights, tutorials, and news from the world of web development.</p>
+           <p style="color:#4b5563; margin-top:0.5rem;">Insights, tutorials, and news from the world of web development.</p>
          </div>
          ${user ? `
            <a href="/blog-pwa/blog/create" class="btn btn-primary" style="display:inline-flex; align-items:center; gap:0.5rem;" data-link>
@@ -46,7 +46,7 @@ export const BlogPage = async () => {
                </div>
              </div>
              <div class="card-body" style="flex:1; display:flex; flex-direction:column; padding:1.5rem;">
-               <div style="font-size:0.875rem; color:#9ca3af; margin-bottom:0.75rem; display:flex; align-items:center; gap:0.5rem;">
+               <div style="font-size:0.875rem; color:#4b5563; margin-bottom:0.75rem; display:flex; align-items:center; gap:0.5rem;">
                  <span>${new Date(post.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</span>
                  <span>•</span>
                  <span>By ${post.author}</span>
