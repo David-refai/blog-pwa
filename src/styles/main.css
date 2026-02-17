@@ -217,3 +217,14 @@ box-shadow: 0 12px 20px -5px rgba(0,0,0,0.1); }
   margin-bottom: 1.5rem;
   }
 }
+/* Offline Banner */
+.offline-banner {
+  background: #fef2f2;
+  color: #dc2626;
+  border-bottom: 1px solid #fee2e2;
+  padding: 0.75rem 1rem;
+  text-align: center;
+  font-weight: 500;
+  font-size: 0.9rem;
+  animation: slideIn 0.3s ease-out;
+}

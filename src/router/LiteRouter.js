@@ -58,6 +58,12 @@ export class LiteRouter {
 
     if (path === '/index.html') path = '/';
 
+    // Special case: /about is actually Home + Scroll to #about
+    if (path === '/about') {
+      path = '/';
+      hashTarget = '#about';
+    }
+
     const match = this.routes.find(r => {
       const rx = new RegExp("^" + r.path.replace(/:(\w+)/g, "(?<$1>[^/]+)") + "$");
       return path.match(rx);

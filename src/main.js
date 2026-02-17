@@ -18,6 +18,7 @@ const routes = [
   { path: '/products', component: ProductsPage, layout: Layout, title: 'Products' },
   { path: '/products/:id', component: ProductDetailsPage, layout: Layout, title: 'Details' },
   { path: '/documentation', component: DocsPage, layout: Layout, title: 'Documentation' },
+  { path: '/about', component: HomePage, layout: Layout, title: 'About | Refai.Code' },
   { path: '/login', component: LoginPage, layout: Layout, title: 'Login' },
   { path: '/logout', component: () => { authState.logout(); return '<div></div>'; } },
   { path: '/signup', component: SignupPage, layout: Layout, title: 'Signup' },
@@ -30,5 +31,19 @@ authState.subscribe(() => {
 });
 
 registerPWA();
-new LiteRouter(routes, '#app').init();
+const router = new LiteRouter(routes, '#app');
+
+// Global Offline Indicator Logic
+const toggleOfflineUI = () => {
+  const banner = document.getElementById('offline-indicator');
+  if (banner) {
+    banner.style.display = navigator.onLine ? 'none' : 'block';
+  }
+};
+
+window.addEventListener('online', toggleOfflineUI);
+window.addEventListener('offline', toggleOfflineUI);
+toggleOfflineUI(); // Initial check
+
+router.init();
 // ===== End Refai.Code Router Setup =====

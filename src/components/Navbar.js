@@ -27,7 +27,7 @@ export const Navbar = () => {
 
         <div class="nav-links" id="nav-menu">
           <a href="/blog-pwa/" data-link>Home</a>
-          <a href="#about">About</a>
+          <a href="/blog-pwa/about" data-link>About</a>
           <a href="/blog-pwa/products" data-link>Products</a>
 
           <div style="margin-left: 2rem; padding-left: 2rem; border-left: 1px solid #ddd;">
